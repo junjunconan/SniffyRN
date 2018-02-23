@@ -9,6 +9,9 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as UserActions from '../actions/user';
+
+import MapView from 'react-native-maps';
+
 import Config from '../Config';
 
 class Nearby extends Component {
@@ -29,6 +32,7 @@ class Nearby extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <MapView style={styles.map} />
       </View>
     );
   }
@@ -49,5 +53,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 });
