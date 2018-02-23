@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as UserActions from '../actions/user';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Config from '../Config';
 
 class Nearby extends Component {
@@ -19,12 +18,10 @@ class Nearby extends Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Image
         resizeMode="contain"
-        source={
-          focused ?
-          require('../images/nearbyTabSelected.png')
-          :
-          require('../images/nearbyTab.png')
-        }
+        source={require('../images/nearbyTab.png')}
+        style={{
+          tintColor: focused ? Config.primaryColor : Config.secondaryColor,
+        }}
       />
     ),
   };

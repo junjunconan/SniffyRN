@@ -5,6 +5,7 @@ import { TabNavigator } from 'react-navigation';
 import ListScreen from '../containers/List';
 import NearbyScreen from '../containers/Nearby';
 import MeScreen from '../containers/Me';
+import Config from '../Config';
 
 const Root = TabNavigator(
   {
@@ -24,7 +25,7 @@ const Root = TabNavigator(
     swipeEnabled: false,
     lazy: true,
     tabBarOptions: {
-      activeTintColor: 'black'
+      activeTintColor: Config.primaryColor,
     }
   }
 );

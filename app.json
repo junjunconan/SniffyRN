@@ -1,5 +1,17 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
-  }
+    "sdkVersion": "25.0.0",
+    "ios": {
+      "bundleIdentifier": "co.devhub.Sniffy"
+    },
+    "android": {
+      "package": "co.devhub.Sniffy"
+    },
+    "name": "SniffyRN",
+    "slug": "sniffyrn",
+    "version": "1.0.0",
+    "icon": "./src/images/app-icon.png"
+  },
+  "name": "SniffyRN",
+  "displayName": "SniffyRN"
 }
