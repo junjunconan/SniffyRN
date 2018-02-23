@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as UserActions from '../actions/user';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Config from '../Config';
 
 class Me extends Component {
@@ -19,9 +18,11 @@ class Me extends Component {
     tabBarIcon: ({ tintColor, focused }) => (
       <Image
         resizeMode="contain"
-        source={
-          require('../images/meTab.png')
-        }
+        source={require('../images/meTab.png')}
+        style={{
+          tintColor: focused ? Config.primaryColor : Config.secondaryColor,
+        }}
+
       />
     ),
   };

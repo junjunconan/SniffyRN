@@ -5,11 +5,10 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   Image,
+  FlatList,
 } from 'react-native';
 import { connect } from 'react-redux';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Config from '../Config';
 
 class List extends Component {
@@ -22,19 +21,31 @@ class List extends Component {
       tabBarIcon: ({ tintColor, focused }) => (
         <Image
           resizeMode="contain"
-          source={
-            focused ?
-            require('../images/listTabSelected.png')
-            :
-            require('../images/listTab.png')
-          }
+          source={require('../images/listTab.png')}
+          style={{
+            tintColor: focused ? Config.primaryColor : Config.secondaryColor,
+          }}
         />
       ),
     };
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [
+        {
+          id: 1,
+          title: '60% OFF',
+        }
+      ],
+    };
+  }
+
   render() {
     const { navigation, user } = this.props;
+    const { data } = this.state;
 
     return (
       <View style={styles.container}>
